@@ -22,23 +22,23 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Overwrite default styles of hr */
 hr {
-  border: 1px solid #f1f1f1;
+  border: 5px solid #f1f1f1;
   margin-bottom: 25px;
 }
 
 /* Set a style for the submit/register button */
-.loginbtn {
-  background-color: #4CAF50;
-  color: white;
+.loginregbtn {
+  background-color: #f1f1f1;
+  color: black;
   padding: 16px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.8;
 }
-
-.loginbtn:hover {
+*/
+.loginregbtn:hover {
   opacity:1;
 }
 
@@ -48,7 +48,14 @@ a {
 }
 
 /* Set a grey background color and center the text of the "sign in" section */
-.signup {
+.signupin {
   background-color: #f1f1f1;
   text-align: center;
+  opacity: 0.8;
+}
+
+.signupin: hover{
+    opacity:1;
+
+
 }

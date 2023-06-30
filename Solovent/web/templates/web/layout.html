@@ -17,7 +17,7 @@
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
         <link type="image/">
 
-        <title>{% block title%}{% endblock %}</title>
+        <title>{% block title %} {% endblock %}</title>
     </head>
     <body>
         <div class="page">
@@ -32,31 +32,27 @@
                                 <li><a href="{% url 'home' %}">Home</a></li>
                                 <li><a href="{% url 'about' %}">About us</a></li>
                                 <li><a href="{% url 'contacts' %}">Contacts</a></li>
+                                <li><a href="{% url 'users:profile' %}">Profile</a></li>
                             </ul>
                             <div class="loginbar-menu">
-                                <a href="{% url 'login' %}"><button class="btn btn-warning">Log in</button></a>
-                                <a href="{% url 'registration' %}"><button class="btn btn-warning">Sign up</button></a>
+                                <a href="{% url 'users:login' %}"><button class="btn btn-warning">Log in</button></a>
+                                <a href="{% url 'users:registration' %}"><button class="btn btn-warning">Sign up</button></a>
                             </div>
                         </div>
                     </div>
                 </nav>
             </header>
+
             <!--ОСНОВНОЙ КОНТЕНТ САЙТА-->
                 <main>
                     {% block content %}
                     {% endblock %}
                 </main>
-        <!--ПОДВАЛ САЙТА-->
-            <footer class="footer">
-                <div class = "footer-wrap">
-                    <div id="social">
-                        <a href="#" target="_blank"><img src="{% static 'web/img/vk.png' %}" alt="logo_vk"></a>
-                        <a href="#" target="_blank"><img src="{% static 'web/img/inst.png' %}" alt="logo_inst"></a>
-                        <a href="#" target="_blank"><img src="{% static 'web/img/twitter.png' %}" alt="logo_twitter"></a>
-                    </div>
-                    <div id="rights">All rights reserved &copy;</div>
-                </div>
-           </footer>
+
+            <!--ПОДВАЛ САЙТА-->
+                {% block footer-content %}
+                {% endblock %}
+
         </div>
     </body>
 </html>

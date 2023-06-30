@@ -1,46 +1,44 @@
-body{
-
-    background-color:#B3E5FC;
-    border-radius: 10px;
-
+body {
+    background: rgb(99, 39, 120)
 }
 
-
-.card{
-  width: 400px;
-  border: none;
-  border-radius: 10px;
-
-  background-color: #fff;
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
 }
 
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
 
+.profile-button:hover {
+    background: #682773
+}
 
-.stats{
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
 
-      background: #f2f5f8 !important;
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
 
-    color: #000 !important;
+.back:hover {
+    color: #682773;
+    cursor: pointer
 }
-.articles{
-  font-size:10px;
-  color: #a1aab9;
-}
-.number1{
-  font-weight:500;
-}
-.followers{
-    font-size:10px;
-  color: #a1aab9;
 
+.labels {
+    font-size: 11px
 }
-.number2{
-  font-weight:500;
-}
-.rating{
-    font-size:10px;
-  color: #a1aab9;
-}
-.number3{
-  font-weight:500;
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
 }

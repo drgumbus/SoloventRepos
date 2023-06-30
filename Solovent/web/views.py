@@ -2,24 +2,26 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 
-# импорт класса для регистрации
-from django.views.generic import TemplateView
 
-# Home page
-def index(request):
-    return render(request, 'web/index.html')
-
-
-# About page
-def about(request):
+def web_view(request):
     return render(request, 'web/about.html')
 
 
-def contacts(request):
+# Home page
+def index_view(request):
+    context = {'title': 'Solovent',
+                'username': 'Din'}
+
+    return render(request, 'web/index.html', context)
+
+
+# About page
+def about_view(request):
+    return render(request, 'web/about.html')
+
+
+def contacts_view(request):
     return render(request, 'web/contacts.html')
-
-
-
 
 
 def pageNotFound(request, exception):

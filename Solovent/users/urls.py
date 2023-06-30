@@ -1,12 +1,11 @@
 from django.urls import path, include
-from users import views as users_views
+from users.views import login_view, profile_view, registration_view, authorization_view
 
-
-
+app_name = 'users'
 
 urlpatterns = [
-    path('profile/', users_views.profile_view, name='profile'),
-    path('login/', users_views.login_view, name='login'),
-    path('registration/', users_views.registration_view, name='registration'),
-    path('authorization/', users_views.authorization_view, name='authorization'),
+    path('profile/', profile_view, name='profile'),
+    path('login/', login_view, name='login'),
+    path('registration/', registration_view, name='registration'),
+    path('authorization/', authorization_view, name='authorization'),
 ]
