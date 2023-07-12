@@ -7,9 +7,10 @@
 
 {% block content %}
   <form action="{% url 'users:registration' %}" method ="post" enctype="multipart/form-data">
-
     {% csrf_token %}
+    
     <div class="container">
+      <input type="button" onclick="history.back();" value="Back"/>
       <h1>Register</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>

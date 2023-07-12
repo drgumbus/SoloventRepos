@@ -32,14 +32,15 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Набор всех установленных приложений проекта
 
 INSTALLED_APPS = [
+    'web.apps.WebConfig',
+    'users',
+    'store',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'web.apps.WebConfig',
-    'users',
     'crispy_forms',
     'crispy_bootstrap4',
 ]

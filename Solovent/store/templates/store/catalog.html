@@ -1,0 +1,24 @@
+<!--Html Каталога товаров. -->
+
+<!--Наследование от файла layout.-->
+{% extends 'web/layout.html' %}
+
+<!-- Блок заголовка страницы -->
+{% block title %}Store page{% endblock %}
+
+<!-- Блок основного контента -->
+{% block content %}
+    <h1>catalog</h1>
+    <div class="features">
+        {% for el in products %}
+            <div class="alert alert-warning">
+                <img class="rounded-circle mt-5" width="100" height="100"
+                src="{{ user.image.url }}">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.description }}</p>
+                <h4>{{ el.cost }}</h4>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

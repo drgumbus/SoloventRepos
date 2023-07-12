@@ -4,5 +4,5 @@ from django.db import models
 
 
 class User(AbstractUser):
-    image = models.ImageField(upload_to="users_image", null=True, blank=True, max_length=255)
+    image = models.ImageField(upload_to="users_image/%Y/%m/%d", null=True, blank=True, max_length=255)
 

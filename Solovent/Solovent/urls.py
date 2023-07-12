@@ -13,6 +13,7 @@ urlpatterns = [
     path('', index_view, name='home'),
     path('admin/', admin.site.urls),
     path('about/', about_view, name='about'),
+    path('store/', include('store.urls', namespace='store')),
     path('contacts/', contacts_view, name='contacts'),
     path('users/', include('users.urls', namespace='users')),
 ] + static(settings.STATIC_URL, documen_root=settings.STATIC_ROOT)

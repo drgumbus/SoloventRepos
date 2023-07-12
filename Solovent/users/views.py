@@ -17,6 +17,7 @@ def registration_view(request):
     return render(request, 'users/registration.html', context)
 
 
+# Функция логирования пользователя
 def login_view(request):
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
@@ -33,6 +34,7 @@ def login_view(request):
     return render(request,  'users/login.html', context)
 
 
+# Функция профиля пользователя
 def profile_view(request):
     if request.method == "POST":
         form = UserProfileForm(instance=request.user, data=request.POST, files=request.FILES)

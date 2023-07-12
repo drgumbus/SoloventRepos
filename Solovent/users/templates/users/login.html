@@ -9,6 +9,7 @@
 <form action="{% url 'users:login' %}" method ="post">
   {% csrf_token %}
   <div class="container">
+    <input type="button" onclick="history.back();" value="Back"/>
     <h1>Login</h1>
     <p>Please enter you details.</p>
     <hr>
