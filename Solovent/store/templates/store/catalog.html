@@ -1,24 +1,76 @@
-<!--Html Каталога товаров. -->
-
-<!--Наследование от файла layout.-->
 {% extends 'web/layout.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static '/store/css/catalog.css' %}">
+{% endblock %}
 
 <!-- Блок заголовка страницы -->
 {% block title %}Store page{% endblock %}
 
 <!-- Блок основного контента -->
 {% block content %}
-    <h1>catalog</h1>
-    <div class="features">
-        {% for el in products %}
-            <div class="alert alert-warning">
-                <img class="rounded-circle mt-5" width="100" height="100"
-                src="{{ user.image.url }}">
-                <h3>{{ el.title }}</h3>
-                <p>{{ el.description }}</p>
-                <h4>{{ el.cost }}</h4>
+<!--               <div class="row">-->
+<!--                   {% for product in products %}-->
+<!--                            <div class="col-lg-4 col-md-6 mb-4">-->
+<!--                                <div class="card h-100">-->
+<!--                                    <a href="#">-->
+<!--                                        <img class="card-img-top"-->
+<!--                                             src="{% if product.image %}-->
+<!--                                            {{ product.image.url }}-->
+<!--                                            {% else %}-->
+<!--                                            {% static 'store/img/default product.png' %}-->
+<!--                                            {% endif %}" alt="Card image cap">-->
+<!--                                    </a>-->
+
+<!--                                    <div class="card-body">-->
+<!--                                        <h4 class="card-title">-->
+<!--                                            <a href="#">{{ product.name }}</a>-->
+<!--                                        </h4>-->
+<!--                                        <h5>{{ product.price }} ₪</h5>-->
+<!--                                        <p class="card-text">{{ product.description }}</p>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="card-footer text-center">-->
+<!--                                        <a class="btn btn-danger"-->
+<!--                                           href="#">-->
+<!--                                            Add to card-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        {% endfor %}-->
+<!--                </div>-->
+
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-lg-4 col-sm-6 cl-custom">
+            <div class="product-card">
+                <div class="product-thumb">
+                    <a href="">
+                        <img class="card-img-top"
+                        src="{% if product.image %}
+                        {{ product.image.url }}
+                        {% else %}
+                        {% static 'store/img/default product.png' %}
+                        {% endif %}" alt="Card image cap">
+                    </a>
+                </div>
+
+                <div class="product-details">
+                    <div class="product-price">{{ product.price }} ₪</div>
+                    <h4><a href="">{{ product.name }}</a></h4>
+                    <p>{{ product.description }}</p>
+                    <div class="product-bottom-details">
+
+                        <div class="product-links"><a class="btn btn-warning btn-color-custom" href="#">Add to card</a></div>
+                    </div>
+                </div>
+
             </div>
+        </div>
         {% endfor %}
     </div>
-
+</div>
 {% endblock %}

@@ -17,6 +17,7 @@ class Category(models.Model):
         return self.name
 
 
+
 class Product(models.Model):
     """Product description model"""
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE,
@@ -25,9 +26,9 @@ class Product(models.Model):
     slug = models.SlugField(max_length=250, db_index=True)
     image = models.ImageField(upload_to='product_image/%Y/%m/%d', blank=True, verbose_name='Photo')
     description = models.TextField(blank=True, verbose_name='Description')
-    price = models.DecimalField(max_length=15, decimal_places=2, verbose_name='Price')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price')
     available = models.BooleanField(default=True, verbose_name='Availability')
-    stock = models.DecimalField(max_length=10, decimal_places=2, verbose_name='Amount')
+    stock = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Amount')
 
     class Meta:
         ordering = ('name',)
