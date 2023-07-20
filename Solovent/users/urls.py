@@ -1,5 +1,6 @@
 from django.urls import path, include
-from users.views import login_view, profile_view, registration_view, authorization_view
+from users.views import login_view, profile_view, registration_view, authorization_view, logout_view
+from web.views import index_view
 
 app_name = 'users'
 
@@ -8,4 +9,6 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('registration/', registration_view, name='registration'),
     path('authorization/', authorization_view, name='authorization'),
+    path('logout/', logout_view, name='logout'),
+
 ]

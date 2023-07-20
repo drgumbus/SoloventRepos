@@ -9,9 +9,7 @@ def web_view(request):
 
 # Home page
 def index_view(request):
-    context = {'title': 'Solovent',
-                'username': 'Din'}
-
+    context = {'title': 'Solovent', 'username': 'Din'}
     return render(request, 'web/index.html', context)
 
 

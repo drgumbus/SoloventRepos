@@ -34,12 +34,18 @@
                                 <li><a href="{% url 'store:catalog' %}">Store</a></li>
                                 <li><a href="{% url 'about' %}">About us</a></li>
                                 <li><a href="{% url 'contacts' %}">Contacts</a></li>
-                                <li><a href="{% url 'users:profile' %}">Profile</a></li>
                             </ul>
+                            {% if user.is_authenticated %}
+                            <div class="loginbar-menu">
+                                <a href="{% url 'users:profile' %}"><button class="btn btn-warning">Profile</button></a>
+                                <a href="{% url 'users:logout' %}"><button class="btn btn-warning">Exit</button></a>
+                            </div>
+                            {% else %}
                             <div class="loginbar-menu">
                                 <a href="{% url 'users:login' %}"><button class="btn btn-warning">Log in</button></a>
                                 <a href="{% url 'users:registration' %}"><button class="btn btn-warning">Sign up</button></a>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </nav>

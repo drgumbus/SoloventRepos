@@ -49,5 +49,10 @@ def profile_view(request):
     return render(request, 'users/profiletest.html', context)
 
 
+def logout_view(request):
+    auth.logout(request)
+    return render(request, 'web/index.html')
+
+
 def authorization_view(request):
     return render(request, 'users/authorization.html')
