@@ -7,6 +7,7 @@ class Category(models.Model):
     """Categories to which the goods belong"""
     name = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, unique=True)
+    image = models.ImageField(upload_to='category_image/%Y/%m/%d', blank=True, verbose_name='Category_icon')
 
     class Meta:
         ordering = ('name',)

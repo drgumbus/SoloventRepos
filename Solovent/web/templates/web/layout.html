@@ -14,6 +14,7 @@
         <!--Подключение CSS-->
         <link rel="stylesheet" href="{% static 'web/css/index.css' %}">
 
+
         <!--Подключение Icons-->
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
 
@@ -37,13 +38,13 @@
                             </ul>
                             {% if user.is_authenticated %}
                             <div class="loginbar-menu">
-                                <a href="{% url 'users:profile' %}"><button class="btn btn-warning">Profile</button></a>
-                                <a href="{% url 'users:logout' %}"><button class="btn btn-warning">Exit</button></a>
+                                <a class="btn-color-custom-layout" href="{% url 'users:profile' %}">Profile</a>
+                                <a class="btn-color-custom-layout" href="{% url 'users:logout' %}">Exit</a>
                             </div>
                             {% else %}
                             <div class="loginbar-menu">
-                                <a href="{% url 'users:login' %}"><button class="btn btn-warning">Log in</button></a>
-                                <a href="{% url 'users:registration' %}"><button class="btn btn-warning">Sign up</button></a>
+                                <a class="btn-color-custom-layout" href="{% url 'users:login' %}">Log in</a>
+                                <a class="btn-color-custom-layout" href="{% url 'users:registration' %}">Sign up</a>
                             </div>
                             {% endif %}
                         </div>

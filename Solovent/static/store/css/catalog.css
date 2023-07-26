@@ -4,11 +4,23 @@
     border-radius: 20px;
     background: #f9f9f9;
 }
-.btn-color-custom{
-    padding-left: 80px;
-    padding-right: 80px
+.btn-color-custom {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    color: #fff;
+    background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
+    text-decoration: none;
+    border-radius: 10px;
+    background-size:200%;
+    transition: all .5s ease-in-out;
 }
-
+.btn-color-custom:hover{
+    background-position: right;
+    color:#fff;
+}
 .cl-custom{
     padding-top:10px;
 }
@@ -29,8 +41,7 @@
     max-height: 100%;
     max-width: 100%;
     border-radius: 20px;
-
-     object-fit:cover;
+    object-fit:cover;
 }
 
 .product-details {
@@ -48,7 +59,6 @@
 
 .product-details p {
     font-size: 15px;
-    margin-bottom: 15px;
     color: #999;
     height: 44px;
     overflow : hidden;
@@ -65,4 +75,44 @@
     color: #000;
     font-weight: 600px;
 
+}
+.product-links {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 15px;
+}
+
+.list-group a {
+    text-decoration: none;
+    color:#000;
+
+}
+.list-group ul {
+    border-radius: 20px;
+}
+
+.my-4-color{
+    color: #8E2DE2;
+}
+
+.list-group-item{
+    padding: 0.75rem 1.25rem;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    transition: all .1s ease-in-out;
+}
+
+.list-group-item:hover{
+    transform: scale(1.2);
+}
+
+.cat-ico{
+    width:25px;
 }
