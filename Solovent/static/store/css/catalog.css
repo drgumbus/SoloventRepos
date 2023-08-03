@@ -96,21 +96,30 @@
 }
 .list-group ul {
     border-radius: 20px;
+    padding-left: 0;
+    margin-bottom: 0;
 }
 
 .my-4-color{
     color: #8E2DE2;
+    margin-top: 0.5rem!important;
+    margin-bottom: 10px!important;
+    text-align:center;
 }
 
 .list-group-item{
-    padding: 0.75rem 1.25rem;
-    background-color: #fff;
+    padding: 0.75rem 0.75rem;
+    margin: 0 0 10px 0;
+    border-radius: 20px;
+    background: #f9f9f9;
     border: 1px solid rgba(0,0,0,.125);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
     transition: all .1s ease-in-out;
 }
 
 .list-group-item:hover{
-    transform: scale(1.2);
+    box-shadow: 0 7px 10px -10px rgba(0, 0, 0, 0.75);
+    transform: scale(1.02)
 }
 
 .cat-ico{

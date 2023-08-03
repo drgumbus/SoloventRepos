@@ -5,22 +5,22 @@ from django import forms
 
 class UserRegistrationForm(UserCreationForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control py-4', 'placeholder': 'Enter you name'
+        'placeholder': 'Enter you name'
     }))
     last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control py-4', 'placeholder': 'Enter you surname'
+        'placeholder': 'Enter you surname'
     }))
     username = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control py-4', 'placeholder': 'Enter you username'
+        'placeholder': 'Enter you username'
     }))
     email = forms.CharField(widget=forms.EmailInput(attrs={
-        'class': 'form-control py-4', 'placeholder': 'Enter you email'
+        'placeholder': 'Enter you email'
     }))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'class': 'form-control py-4', 'placeholder': 'Enter you password'
+        'placeholder': 'Enter you password'
     }))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'class': 'form-control py-4', 'placeholder': 'Repeat you password'
+        'placeholder': 'Repeat you password'
     }))
 
     class Meta:
@@ -30,10 +30,10 @@ class UserRegistrationForm(UserCreationForm):
 
 class UserLoginForm(AuthenticationForm, forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control py-4', 'placeholder': 'Enter you login'
+        'placeholder': 'Enter you login'
     }))
     password = forms.CharField(widget=forms.PasswordInput(attrs={
-        'class': 'form-control py-4', 'placeholder': 'Enter you password'
+        'placeholder': 'Enter you password'
     }))
 
     class Meta:
@@ -42,16 +42,16 @@ class UserLoginForm(AuthenticationForm, forms.ModelForm):
 
 
 class UserProfileForm(UserChangeForm):
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                                               'placeholder': 'Enter you name'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                                              'placeholder': 'Enter you surname'}))
-    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'custom-file-input'}), required=False)
-    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'readonly': True}))
-    email = forms.CharField(widget=forms.EmailInput(attrs={'class': 'form-control', 'readonly': True}))
-    mobile = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter you mobile'})
+    first_name = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Enter you name'}))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Enter you surname'}))
+    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'custom-file-input', 'placeholder': 'Choose pic'}),
+                             required=False)
+    username = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={'readonly': True}))
+    mobile = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter you mobile'})
                              )
-
 
     class Meta:
         model = User

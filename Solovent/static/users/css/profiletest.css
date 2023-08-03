@@ -4,10 +4,6 @@
 	box-sizing: border-box;
 }
 
-body{
-	font-family: 'Roboto', sans-serif;
-}
-
 input {
 	height: 45px;
 	width: 100%;
@@ -34,8 +30,7 @@ input:focus {
 	align-items: center;
 }
 
-
-.register-form-container {
+.profile-form-container {
 	opacity: 0;
 	width: 100%;
 	max-width: 415px;
@@ -44,8 +39,8 @@ input:focus {
 	border-radius: 20px;
 	padding-left: 30px;
 	padding-right: 30px;
-	padding-top: 38px;
-	padding-bottom: 38px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	animation-name: fadeForm;
 	animation-duration: .7s;
 	animation-timing-function: ease-in-out;
@@ -54,9 +49,10 @@ input:focus {
 	animation-fill-mode: forwards;
 	transition: all .3s ease-in-out;
 }
-.register-form-container:hover{
+.profile-form-container:hover{
     box-shadow: 0px 5px 50px rgba(217,229,255);
 }
+
 @keyframes fadeForm{
 	0%{
 		opacity: 0;
@@ -79,97 +75,41 @@ input:focus {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 25px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+
 	text-align: center;
 }
-
+.custom-file-input{
+    padding:0;
+}
 .form-field {
 	margin-bottom: 13px;
+	text-align:center;
 }
 
 .button {
-
 	height: 45px;
 	font-size: 14px;
 	font-weight: bold;
 	background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
+	border:none;
 	border-radius: 5px;
 	color: #fff;
 	text-transform: uppercase;
-    border:none;
 	line-height: 45px;
-
 	background-size:200%;
     transition: all .5s ease-in-out;
-
 }
 
 .button:hover{
 	background-position: right;
 	color: #fff;
-
 }
 
 a.button {
 	text-decoration: none;
 }
 
-.button-google {
-    display:block;
-	color: #C6CFDC;
-	background:#F2F6FF;
-	text-align: center;
-
-}
-
-.button-google:hover{
-	color: #8E2DE2;
-    border: none;
-}
-
-.divider {
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 14px;
-	color: #405D87;
-	text-align: center;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
 .form-buttons{
     display:flex;
     flex-direction: column;
-}
-
-
-.custom-er{
-    max-width:415px;
-    display:flex;
-    padding: 15px;
-    margin-top: 50px;
-}
-
-.custom-er ul{
-    list-style-type:none;
-    padding: 0;
-    margin: 0;
-    color: #000;
- }
-.alert-warning{
- --bs-alert-bg: #ffdd7d;
-}
-.close-btn {
-    margin-left: 15px;
-    color: #fff;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close-btn:hover {
-    color: #000;
 }

@@ -1,60 +1,143 @@
-* {box-sizing: border-box}
-
-/* Add padding to containers */
-.container {
-  padding: 16px;
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+input {
+	height: 45px;
+	width: 100%;
+	color: #385983;
+	font-size: 14px;
+	line-height: 16px;
+	border: 2px solid #dccfe8;
+	border-radius: 5px;
+	padding-left: 25px;
+	transition: all .3s ease-in-out;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+input:focus {
+	outline: none;
+	border: 2px solid #4A00E0;
 }
 
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+.main-content {
+	background-color: #fff;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-/* Set a style for the submit/register button */
-.login_btn {
-  background-color: dodgerblue;
-  border-radius: 12px;
-  color: white;
-  padding: 8px 10px;
-
-  border: none;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: all 0.2s ease-out;
+.login-form-container {
+	opacity: 0;
+	width: 100%;
+	max-width: 415px;
+	background:#fff;
+	box-shadow: 0px 5px 20px rgba(217,229,255);
+	border-radius: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 38px;
+	padding-bottom: 38px;
+	animation-name: fadeForm;
+	animation-duration: .7s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	transition: all .3s ease-in-out;
+}
+.login-form-container:hover{
+    box-shadow: 0px 5px 50px rgba(217,229,255);
 }
 
-.login_btn:hover {
-  opacity:1;
+@keyframes fadeForm{
+	0%{
+		opacity: 0;
+	}
+	25%{
+		opacity: .25;
+	}
+	50%{
+		opacity: .5;
+	}
+	75%{
+		opacity: .75;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.form-title{
+	color: #000;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 25px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: center;
 }
 
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-  opacity:0.7;
-  transition: all 0.2s ease-out;
+.form-field {
+	margin-bottom: 13px;
 }
 
-a:hover {
-    opacity:1;
+.button {
+	height: 45px;
+	font-size: 14px;
+	font-weight: bold;
+	background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
+	border:none;
+	border-radius: 5px;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 45px;
+	background-size:200%;
+    transition: all .5s ease-in-out;
 }
 
-.sign_up {
-  background-color: #f1f1f1;
-  text-align: center;
+.button:hover{
+	background-position: right;
+	color: #fff;
+}
+
+a.button {
+	text-decoration: none;
+}
+
+.form-buttons{
+    display:flex;
+    flex-direction: column;
+}
+
+.custom-er{
+    max-width:415px;
+    display:flex;
+    padding: 15px;
+}
+
+.custom-er ul{
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    color: #000;
+ }
+.alert-warning{
+ --bs-alert-bg: #ffdd7d;
+}
+.close-btn {
+    margin-left: 15px;
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #000;
 }

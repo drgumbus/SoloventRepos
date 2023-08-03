@@ -1,8 +1,9 @@
 body {
 	margin: 0;
-	font-size: 20px;
+
     background-color: #FFF;
     color: #000;
+	font-family: 'Roboto', sans-serif;
 }
 
 *,
@@ -12,7 +13,7 @@ body {
 }
 
 .btn-color-custom-layout {
-    padding: 5px;
+    padding: 10px;
     font-size: 18px;
     color: #fff;
     background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
@@ -54,12 +55,12 @@ body {
     font-weight: 700;
     font-size: 24px;
     text-decoration: none;
-    color: #2b2b2b;
+    color: #8E2DE2;
     transition: all .3s ease-in-out;
 }
 
 .navbar-brand:hover {
-    color: #000000;
+    color: #4A00E0;
 }
 
 /*Убрать полосу прокрутки для всей страницы*/
@@ -92,7 +93,7 @@ body {
     font-size: 18px;
     opacity: 0.9;
     text-decoration: none;
-    padding: 16px;
+    padding: 0 8px 0 8px;
     transition: all .2s ease-in-out;
 }
 
@@ -189,4 +190,33 @@ footer #rights {
     color: #fff;
     background-position: right;
 
+}
+.for-large-screens{
+	transition: transform .2s ease-in-out;
+
+}
+
+.for-large-screens:hover{
+	transform: scale(1.1);
+}
+
+@media screen and (max-width:770px) {
+    .navbar-menu li a{
+        display: none;
+    }
+    .for-large-screens {
+        display:block;
+        margin-left: 10px;
+        margin-right:10px;
+    }
+
+}
+
+@media screen and (min-width:771px) {
+  .navbar-menu li a{
+    display:block;
+  }
+  .for-large-screens {
+    display:none;
+  }
 }

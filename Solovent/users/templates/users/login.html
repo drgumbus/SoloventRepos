@@ -6,26 +6,37 @@
 {% endblock %}
 
 {% block content %}
+
+
 <form action="{% url 'users:login' %}" method ="post">
-  {% csrf_token %}
-  <div class="container">
-    <input type="button" onclick="history.back();" value="Back"/>
-    <h1>Login</h1>
-    <p>Please enter you details.</p>
-    <hr>
+    {% csrf_token %}
+        <div class="main-content">
+            {% if form.non_field_errors %}
+                <div class="alert alert-warning alert-dismissible fade show custom-er" role="alert">
+                    {{ form.non_field_errors }}
+                    <span class="close-btn" aria-hidden="true" onclick="this.parentElement.style.display='none';">
+                        ×
+                    </span>
+                </div>
+            {% endif %}
+            <div class="login-form-container">
+                <h1 class="form-title">Login</h1>
 
-    <label for="{{ form.username.id_for_label }}"><b>Login</b></label>
-    {{ form.username }}
+                <div class="form-fields">
+                    <div class="form-field">
+                        {{ form.username }}
+                    </div>
+                    <div class="form-field">
+                        {{ form.password }}
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="button button-log">Login</button>
+                        <h1 class="form-title">Don't have an account? <a href="{% url 'users:registration' %}"><br>Sign up</a></h1>
+                    </div>
+                </div>
 
-    <label for="{{ form.password.id_for_label}}"><b>Password</b></label>
-    {{ form.password }}
-    <hr>
 
-    <button type="submit" class="login_btn">Login</button>
-  </div>
-
-  <div class="container sign_up">
-    <p>Don't have an account? <a href="{% url 'users:registration' %}"><br>Sign up</a>.</p>
-  </div>
+            </div>
+        </div>
 </form>
 {% endblock %}

@@ -46,7 +46,7 @@ def profile_view(request):
     else:
         form = UserProfileForm(instance=request.user)
     context = {'title': 'Solovent - Profile', 'form': form}
-    return render(request, 'users/profiletest.html', context)
+    return render(request, 'users/profile.html', context)
 
 
 def logout_view(request):
