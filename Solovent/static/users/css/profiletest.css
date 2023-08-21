@@ -3,6 +3,10 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+input[type=file]{
+    value: 2;
+}
+
 
 input {
 	height: 45px;
@@ -78,9 +82,16 @@ input:focus {
 
 	text-align: center;
 }
+
 .custom-file-input{
     padding:0;
+    color: red;
+    content: "afas";
 }
+.mt-5 {
+    margin-top: 0rem!important;
+}
+
 .form-field {
 	margin-bottom: 13px;
 	text-align:center;
@@ -113,3 +124,5 @@ a.button {
     display:flex;
     flex-direction: column;
 }
+
+

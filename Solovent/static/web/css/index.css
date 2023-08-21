@@ -67,6 +67,43 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
+main{
+    padding-top:50px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont-block{
+    margin-top:30px;
+    width: 800px;
+    height: 400px;
+    overflow:hidden;
+    border-radius: 25px;
+    background-image: url("events/event_1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: changing 20s infinite;
+    transition: all .3s ease-in-out;
+}
+.cont-block:hover{
+    transform: scale(1.03);
+}
+@keyframes changing{
+    0%{
+        background-image:url("events/event_1.jpg");
+    }
+    25%{
+        background-image:url("events/event_2.jpg");
+    }
+    50%{
+        background-image:url("events/event_3.jpg");
+    }
+    75%{
+        background-image:url("events/event_4.jpg");
+    }
+}
 
 .navbar-wrap {
     display: flex;
@@ -154,10 +191,11 @@ footer #rights {
 }
 
 .features {
+  text-align:center;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  margin-top:50px;
 }
 
 .features-block h1, p {
@@ -220,3 +258,4 @@ footer #rights {
     display:none;
   }
 }
+

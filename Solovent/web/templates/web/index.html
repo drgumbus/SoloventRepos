@@ -11,6 +11,7 @@
 
 <!-- Блок основного контента -->
 {% block content %}
+<div class="cont-block"></div>
     <div class="features">
         <div class="features-block">
             <h1>Welcome to Solovent!</h1>
@@ -25,15 +26,3 @@
     </div>
 {% endblock %}
 
-{% block footer-content %}
-    <footer class="footer">
-        <div class = "footer-wrap">
-            <div id="social">
-                <a href="#" target="_blank"><img src="{% static 'web/img/vk.png' %}" alt="logo_vk"></a>
-                <a href="#" target="_blank"><img src="{% static 'web/img/inst.png' %}" alt="logo_inst"></a>
-                <a href="#" target="_blank"><img src="{% static 'web/img/twitter.png' %}" alt="logo_twitter"></a>
-            </div>
-            <div id="rights">All rights reserved &copy;</div>
-        </div>
-     </footer>
-{% endblock %}

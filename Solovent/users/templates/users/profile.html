@@ -20,13 +20,24 @@
                         {% else %}
                         {% static 'users/img/default avatar.jpg' %}
                         {% endif %}">
+                    </div>
+                    <div class="form-field">
                         {{ form.image }}
                     </div>
+
                     <div class="form-field">{{ form.username }}</div>
                     <div class="form-field">{{ form.email }}</div>
                     <div class="form-field">{{ form.first_name }}</div>
                     <div class="form-field">{{ form.last_name }}</div>
                     <div class="form-field">{{ form.mobile}}</div>
+                    <div class="form-field">
+                        <div class="form-row">
+                            <div class="col-lg-12" style="margin-top: 33px;">
+                                <input class="btn btn-info btn-block" type="submit" value="Сохранить">
+                            </div>
+                        </div>
+                    </div>
+
              </div>
 
         </div>

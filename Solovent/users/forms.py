@@ -46,8 +46,10 @@ class UserProfileForm(UserChangeForm):
         'placeholder': 'Enter you name'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Enter you surname'}))
-    image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'custom-file-input', 'placeholder': 'Choose pic'}),
-                             required=False)
+    image = forms.ImageField(widget=forms.FileInput(attrs={
+        'placeholder': 'Choose avatar',
+        'class': 'custom-file-input'
+        }), required=False)
     username = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
     email = forms.CharField(widget=forms.EmailInput(attrs={'readonly': True}))
     mobile = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter you mobile'})

@@ -69,15 +69,24 @@
             </header>
 
             <!--ОСНОВНОЙ КОНТЕНТ САЙТА-->
-                <main>
-                    {% block content %}
-                    {% endblock %}
-                </main>
+            <main>
+                {% block content %}
+                {% endblock %}
+            </main>
 
             <!--ПОДВАЛ САЙТА-->
-                {% block footer-content %}
-                {% endblock %}
+            <footer class="footer">
+                <div class = "footer-wrap">
+                    <div id="social">
+                        <a href="#" target="_blank"><img src="{% static 'web/img/vk.png' %}" alt="logo_vk"></a>
+                        <a href="#" target="_blank"><img src="{% static 'web/img/inst.png' %}" alt="logo_inst"></a>
+                        <a href="#" target="_blank"><img src="{% static 'web/img/twitter.png' %}" alt="logo_twitter"></a>
+                    </div>
+                    <div id="rights">All rights reserved &copy;</div>
+                </div>
+            </footer>
 
         </div>
     </body>
+
 </html>
