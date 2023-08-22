@@ -3,8 +3,15 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-input[type=file]{
-    value: 2;
+
+input[type=file] {
+    display:none;
+}
+
+label {
+   display: flex;
+    cursor: pointer;
+    justify-content: center;
 }
 
 
@@ -16,11 +23,11 @@ input {
 	line-height: 16px;
 	border: 2px solid #dccfe8;
 	border-radius: 5px;
-	padding-left: 25px;
+	padding-left: 15px;
 	transition: all .3s ease-in-out;
 }
 
-input:focus {
+input:hover {
 	outline: none;
 	border: 2px solid #4A00E0;
 }
@@ -37,7 +44,8 @@ input:focus {
 .profile-form-container {
 	opacity: 0;
 	width: 100%;
-	max-width: 415px;
+	max-width: 510px;
+	min-width:300px;
 	background:#fff;
 	box-shadow: 0px 5px 20px rgba(217,229,255);
 	border-radius: 20px;
@@ -79,7 +87,6 @@ input:focus {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 25px;
-
 	text-align: center;
 }
 
@@ -91,10 +98,30 @@ input:focus {
 .mt-5 {
     margin-top: 0rem!important;
 }
+.form-fields {
+    width:100%;
+}
 
 .form-field {
-	margin-bottom: 13px;
-	text-align:center;
+    margin-bottom: 10px;
+}
+.form-field-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.form-field-title {
+    display: flex;
+    margin-bottom: 12px;
+    justify-content: center;
+
+}
+
+.form-field-info{
+    opacity: 0.6;
+    padding-left: 5px;
+    font-size: 12;
 }
 
 .button {

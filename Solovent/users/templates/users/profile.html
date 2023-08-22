@@ -13,8 +13,8 @@
         <div class="profile-form-container">
              <h1 class="form-title">Account Setting</h1>
              <div class="form-fields">
-                    <div class="form-field">
-                        <img class="rounded-circle mt-5" width="100" height="100"
+                    <div class="form-field-title">
+                        <img class="rounded-circle mt-5" width="150" height="150"
                         src="{% if user.image %}
                         {{ user.image.url }}
                         {% else %}
@@ -22,18 +22,38 @@
                         {% endif %}">
                     </div>
                     <div class="form-field">
-                        {{ form.image }}
+                       <label class="btn-color-custom-layout">Change photo {{ form.image }}</label>
                     </div>
 
-                    <div class="form-field">{{ form.username }}</div>
-                    <div class="form-field">{{ form.email }}</div>
-                    <div class="form-field">{{ form.first_name }}</div>
-                    <div class="form-field">{{ form.last_name }}</div>
-                    <div class="form-field">{{ form.mobile}}</div>
+                    <div class="form-field">
+                        <div class="form-field-info">username</div>
+                        <div class="form-field-about">{{ form.username }}</div>
+                    </div>
+
+                    <div class="form-field">
+                        <div class="form-field-info">email</div>
+                        <div class="form-field">{{ form.email }}</div>
+                    </div>
+
+                    <div class="form-field">
+                        <div class="form-field-info">name</div>
+                        <div class="form-field">{{ form.first_name }}</div>
+                    </div>
+
+                    <div class="form-field">
+                         <div class="form-field-info">surname</div>
+                        <div class="form-field">{{ form.last_name }}</div>
+                    </div>
+
+                    <div class="form-field">
+                        <div class="form-field-info">mobile</div>
+                        <div class="form-field">{{ form.mobile }}</div>
+                    </div>
+
                     <div class="form-field">
                         <div class="form-row">
                             <div class="col-lg-12" style="margin-top: 33px;">
-                                <input class="btn btn-info btn-block" type="submit" value="Сохранить">
+                                <input class="btn-color-custom-layout" type="submit" value="Save">
                             </div>
                         </div>
                     </div>

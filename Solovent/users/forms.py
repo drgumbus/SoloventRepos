@@ -50,10 +50,12 @@ class UserProfileForm(UserChangeForm):
         'placeholder': 'Choose avatar',
         'class': 'custom-file-input'
         }), required=False)
-    username = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
-    email = forms.CharField(widget=forms.EmailInput(attrs={'readonly': True}))
-    mobile = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter you mobile'})
-                             )
+    username = forms.CharField(widget=forms.TextInput(attrs={
+        'readonly': True}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={
+        'readonly': True}))
+    mobile = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Enter you mobile'}))
 
     class Meta:
         model = User

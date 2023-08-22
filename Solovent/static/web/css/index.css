@@ -68,14 +68,13 @@ body {
   width: 0;
 }
 main{
-    padding-top:50px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top:25px;
+
 }
 
 .cont-block{
     margin-top:30px;
+    margin: auto;
     width: 800px;
     height: 400px;
     overflow:hidden;
