@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    align-items: flex-start;
+}
+
+.card-body p {
+    text-align: left;
+}
+
+.card-footer{
+    display:flex;
+    justify-content: space-between;
+}
+
+.badge{
+    --bs-badge-color:#fff;
+      background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
+      background-size: 200%;
+      font-size:16px;
+}

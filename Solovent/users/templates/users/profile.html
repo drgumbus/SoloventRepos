@@ -3,13 +3,13 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'users/css/profiletest.css' %}">
-
+    <link rel="stylesheet" href="{% static 'store/css/basket.css' %}">
 {% endblock %}
 
 {% block content %}
 <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="main-content">
+    <div class="container">
         <div class="profile-form-container">
              <h1 class="form-title">Account Setting</h1>
              <div class="form-fields">
@@ -57,10 +57,10 @@
                             </div>
                         </div>
                     </div>
-
              </div>
-
         </div>
+        {% include 'store/baskets.html'%}
     </div>
 </form>
+
 {% endblock %}

@@ -13,7 +13,7 @@ body {
 }
 
 .btn-color-custom-layout {
-    padding: 10px;
+    padding: 5px 5px 5px 5px;
     font-size: 18px;
     color: #fff;
     background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
