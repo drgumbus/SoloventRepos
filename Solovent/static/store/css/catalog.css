@@ -125,3 +125,19 @@
 .cat-ico{
     width:25px;
 }
+.col-lg-9{
+    margin-bottom: 50px;
+}
+
+.product-cat-description{
+    opacity: 0.45;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+.empty-cat{
+    text-align: center;
+    margin-top: 150px;
+    font-size: 30px;
+}

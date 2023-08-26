@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import UserLoginForm, UserRegistrationForm, UserProfileForm
+from django.contrib.auth.decorators import login_required
 from store.models import Basket
 from django.urls import reverse
 from django.contrib import auth
@@ -14,7 +15,10 @@ def registration_view(request):
             return HttpResponseRedirect(reverse('users:login'))
     else:
         form = UserRegistrationForm()
-    context = {'title': 'Solovent - Registration', 'form': form}
+    context = {
+        'title': 'Solovent - Registration',
+        'form': form,
+               }
     return render(request, 'users/registration.html', context)
 
 
@@ -31,11 +35,15 @@ def login_view(request):
                 return HttpResponseRedirect(reverse('users:profile'))
     else:
         form = UserLoginForm()
-    context = {'title': 'Solovent - Login', 'form': form}
+    context = {
+        'title': 'Solovent - Login',
+        'form': form,
+    }
     return render(request,  'users/login.html', context)
 
 
 # Функция профиля пользователя
+@login_required
 def profile_view(request):
     if request.method == "POST":
         form = UserProfileForm(instance=request.user, data=request.POST, files=request.FILES)
@@ -46,10 +54,11 @@ def profile_view(request):
             print(form.errors)
     else:
         form = UserProfileForm(instance=request.user)
+
     context = {
         'title': 'Solovent - Profile',
         'form': form,
-        'baskets': Basket.objects.all()
+        'baskets': Basket.objects.filter(user=request.user),
     }
     return render(request, 'users/profile.html', context)
 
