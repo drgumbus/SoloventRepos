@@ -1,14 +1,18 @@
 from django.urls import path, include
-from store.views import catalog_view, basket_add, basket_remove
+from store.views import CatalogListView, basket_add, basket_remove
 from django.conf.urls.static import static
 from django.conf import settings
 
 app_name = 'store'
 
 urlpatterns = [
-    path('catalog/', catalog_view, name='catalog'),
-    path('catalog/category/<int:category_id>/', catalog_view, name='category'),
+    # all catalog
+    path('catalog/', CatalogListView.as_view(), name='catalog'),
+    # catalog by category
+    path('catalog/category/<int:category_id>/', CatalogListView.as_view(), name='category'),
+    # add to basket
     path('baskets/add/<int:product_id>/', basket_add, name='basket_add'),
+    # removal from basket
     path('baskets/remove/<int:basket_id>/', basket_remove, name='basket_remove')
 ]
 

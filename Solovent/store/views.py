@@ -1,21 +1,27 @@
+from django.shortcuts import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseNotFound
 from .models import Product, Category, Basket
-from users.models import User
+from django.views.generic.list import ListView
+from common.views import TitleMixin
+
+# Catalog products
+class CatalogListView(TitleMixin, ListView):
+    model = Product
+    template_name = 'store/catalog.html'
+    title = 'Solovent - Store'
+
+    def get_queryset(self):
+        queryset = super(CatalogListView, self).get_queryset()
+        category_id = self.kwargs.get('category_id')
+        return queryset.filter(category_id=category_id) if category_id else queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(CatalogListView, self).get_context_data()
+        context['cat_products'] = Category.objects.all()
+        return context
 
 
-def catalog_view(request, category_id=None):
-    products = Product.objects.filter(category_id=category_id) if category_id else Product.objects.all()
-    context = {
-        'title': "Solovent - Store",
-        'products': products,
-        'cat_products': Category.objects.all(),
-    }
-    return render(request, 'store/catalog.html', context)
-
-
+# Add from basket
 @login_required
 def basket_add(request, product_id):
     product = Product.objects.get(id=product_id)
@@ -30,6 +36,7 @@ def basket_add(request, product_id):
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
+# removal from basket
 @login_required
 def basket_remove(request, basket_id):
     basket = Basket.objects.get(id=basket_id)

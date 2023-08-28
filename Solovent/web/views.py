@@ -1,21 +1,13 @@
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import render
+from django.http import HttpResponseNotFound
+from django.views.generic.base import TemplateView
 
-
-def web_view(request):
-    return render(request, 'web/about.html')
-
+from common.views import TitleMixin
 
 # Home page
-def index_view(request):
-    context = {'title': 'Solovent - Home', 'username': 'Din'}
-    return render(request, 'web/index.html', context)
-
-
-# About page
-def about_view(request):
-    return render(request, 'web/about.html')
+class IndexView(TitleMixin, TemplateView):
+    template_name = 'web/index.html'
+    title = 'Solovent - Home'
 
 
 def contacts_view(request):

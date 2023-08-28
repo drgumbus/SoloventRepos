@@ -50,13 +50,11 @@
                                          height="25px" width="25px">
                                 </li>
                                 <li><a href="{% url 'store:catalog' %}">Store</a></li>
-
-                                <li><a href="{% url 'about' %}">About us</a></li>
                                 <li><a href="{% url 'contacts' %}">Contacts</a></li>
                             </ul>
                             {% if user.is_authenticated %}
                             <div class="loginbar-menu">
-                                <a class="btn-color-custom-layout" href="{% url 'users:profile' %}">Profile</a>
+                                <a class="btn-color-custom-layout" href="{% url 'users:profile' user.id %}">Profile</a>
                                 <a class="btn-color-custom-layout" href="{% url 'users:logout' %}">Exit</a>
                             </div>
                             {% else %}
