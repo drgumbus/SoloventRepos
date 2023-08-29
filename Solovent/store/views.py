@@ -4,11 +4,16 @@ from .models import Product, Category, Basket
 from django.views.generic.list import ListView
 from common.views import TitleMixin
 
+
 # Catalog products
 class CatalogListView(TitleMixin, ListView):
     model = Product
     template_name = 'store/catalog.html'
     title = 'Solovent - Store'
+
+
+    def search_by_request(self, request):
+        search_query = request.GET.get('search', '')
 
     def get_queryset(self):
         queryset = super(CatalogListView, self).get_queryset()

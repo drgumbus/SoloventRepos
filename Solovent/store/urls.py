@@ -8,12 +8,15 @@ app_name = 'store'
 urlpatterns = [
     # all catalog
     path('catalog/', CatalogListView.as_view(), name='catalog'),
-    # catalog by category
+    # sorted catalog
     path('catalog/category/<int:category_id>/', CatalogListView.as_view(), name='category'),
+    # search in catalog
+    path('catalog/search/', CatalogListView.as_view(), name='catalog_search'),
     # add to basket
     path('baskets/add/<int:product_id>/', basket_add, name='basket_add'),
     # removal from basket
     path('baskets/remove/<int:basket_id>/', basket_remove, name='basket_remove')
+
 ]
 
 if settings.DEBUG:

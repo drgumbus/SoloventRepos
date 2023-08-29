@@ -31,10 +31,19 @@
                  <!--Здесь можно описать одинаковый контент для всех страниц -->
                 <nav class="navbar">
                     <div class="container">
-                        <a href="{% url 'home' %}" class="navbar-brand">Solovent</a>
+                        <div class="left-block">
+                             <a href="{% url 'home' %}" class="navbar-brand">Solovent</a>
+                        <div class="search-box">
+                            <input type="text" class="search-txt" placeholder="Search...">
+                            <a href="#" class="search-btn">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        </div>
+
+
                         <div class="navbar-wrap">
                             <ul class="navbar-menu">
-
                                 <li>
                                     <img src="{% static 'web/img/ico-home.png' %}"
                                          class="for-large-screens"
