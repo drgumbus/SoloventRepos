@@ -11,6 +11,7 @@ body {
 *:after{
 	box-sizing: border-box;
 }
+
 .search-box {
     display: flex;
     background-color: #ddd;
@@ -20,6 +21,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 
 .search-btn {
     display: flex;
@@ -57,7 +59,6 @@ body {
 
 .search-box:hover .search-btn{
     background-color: #ddd;
-
 }
 .left-block{
     display:flex;
@@ -135,8 +136,8 @@ main{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    animation: changing 20s infinite;
-   /* transition: all .3s ease-in-out;
+   /*  animation: changing 20s infinite;
+   transition: all .3s ease-in-out;
 
 
 
@@ -175,7 +176,6 @@ main{
         background-image:url("events/event_fone_4.jpg");
     }
 }*/
-
 .navbar-wrap {
     display: flex;
     height: 100%;
@@ -264,7 +264,7 @@ footer #rights {
 .features {
     position: absolute;
     top: 50%;
-    margin: auto;
+    margin-top: -50px;
     width: 100%;
 }
 

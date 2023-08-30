@@ -1,10 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.mail import send_mail
+from phonenumber_field.modelfields import PhoneNumberField
+
 
 class User(AbstractUser):
     image = models.ImageField(upload_to="users_image/%Y/%m/%d", null=True, blank=True, max_length=255)
     is_verified_email = models.BooleanField(default=False)
+    email = models.EmailField(null=True, blank=True)
+    phone_number = PhoneNumberField(unique=True, null=True, blank=False)
 
 
 class EmailVerification(models.Model):

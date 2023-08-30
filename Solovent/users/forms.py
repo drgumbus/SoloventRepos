@@ -27,10 +27,12 @@ class UserRegistrationForm(UserCreationForm):
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
         'placeholder': 'Repeat you password'
     }))
+    phone_number = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Enter you mobile'}))
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2', 'phone_number')
 
     def save(self, commit=True):
         user = super(UserRegistrationForm, self).save(commit=True)
@@ -38,6 +40,7 @@ class UserRegistrationForm(UserCreationForm):
         record = EmailVerification.objects.create(code=uuid.uuid4(), user=user, expiration=expiration)
         record.send_verification_email()
         return user
+
 
 class UserLoginForm(AuthenticationForm, forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
@@ -65,9 +68,9 @@ class UserProfileForm(UserChangeForm):
         'readonly': True}))
     email = forms.CharField(widget=forms.EmailInput(attrs={
         'readonly': True}))
-    mobile = forms.CharField(widget=forms.TextInput(attrs={
+    phone_number = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Enter you mobile'}))
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'image', 'username', 'email', 'mobile')
+        fields = ('first_name', 'last_name', 'image', 'username', 'email', 'phone_number')
