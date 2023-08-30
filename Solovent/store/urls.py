@@ -1,5 +1,5 @@
 from django.urls import path, include
-from store.views import CatalogListView, basket_add, basket_remove, Search
+from store.views import CatalogListView, basket_add, basket_remove
 from django.conf.urls.static import static
 from django.conf import settings
 

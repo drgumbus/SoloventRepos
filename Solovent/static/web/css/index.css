@@ -123,11 +123,27 @@ body {
   width: 0;
 }
 main{
-    padding-top:25px;
+    padding-top:0;
 
 }
 
-.cont-block{
+.main-back{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(events/event_background_2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: changing 20s infinite;
+   /* transition: all .3s ease-in-out;
+
+
+
+
+
+
+
     margin-top:30px;
     margin: auto;
     width: 800px;
@@ -139,25 +155,26 @@ main{
     background-position: center;
     background-size: cover;
     animation: changing 20s infinite;
-    transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;*/
 }
-.cont-block:hover{
+/*
+.main-back:hover{
     transform: scale(1.03);
 }
 @keyframes changing{
     0%{
-        background-image:url("events/event_1.jpg");
+        background-image:url("events/event_background_1.jpg");
     }
     25%{
-        background-image:url("events/event_2.jpg");
+        background-image:url("events/event_background_2.jpg");
     }
     50%{
-        background-image:url("events/event_3.jpg");
+        background-image:url("events/event_fone_3.jpg");
     }
     75%{
-        background-image:url("events/event_4.jpg");
+        background-image:url("events/event_fone_4.jpg");
     }
-}
+}*/
 
 .navbar-wrap {
     display: flex;
@@ -245,11 +262,10 @@ footer #rights {
 }
 
 .features {
-  text-align:center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top:50px;
+    position: absolute;
+    top: 50%;
+    margin: auto;
+    width: 100%;
 }
 
 .features-block h1, p {
@@ -259,16 +275,13 @@ footer #rights {
 .features-block button {
 	margin: 0 auto;
 	display: block;
-
 }
-
 
 .div-custom{
     display:flex;
     justify-content: center;
 }
 .btn-my-custom {
-
     padding: 5px 7px 5px 7px;
     font-size: 18px;
     color: #fff;
@@ -278,21 +291,21 @@ footer #rights {
     background-size:200%;
     transition: all .5s ease-in-out;
 }
+
 .btn-my-custom:hover{
     color: #fff;
     background-position: right;
-
 }
+
 .for-large-screens{
 	transition: transform .2s ease-in-out;
-
 }
 
 .for-large-screens:hover{
 	transform: scale(1.1);
 }
 
-@media screen and (max-width:770px) {
+@media screen and (max-width:770px){
     .navbar-menu li a{
         display: none;
     }
@@ -301,10 +314,9 @@ footer #rights {
         margin-left: 10px;
         margin-right:10px;
     }
-
 }
 
-@media screen and (min-width:771px) {
+@media screen and (min-width:771px){
   .navbar-menu li a{
     display:block;
   }

@@ -34,25 +34,6 @@ class CatalogListView(TitleMixin, ListView):
         return context
 
 
-class Search(ListView):
-    model = Product
-    template_name = 'store/catalog.html'
-    title = 'Solovent - Store'
-
-    def get_queryset(self):
-        queryset = super(Search, self).get_queryset()
-        search_query = self.request.GET.get('search', '')
-        if search_query:
-            return queryset.filter(name__icontains=search_query)
-        else:
-            return queryset
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context['search'] = self.request.GET.get('search')
-        return context
-
-
 # Add from basket
 @login_required
 def basket_add(request, product_id):

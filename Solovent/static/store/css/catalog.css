@@ -141,3 +141,6 @@
     margin-top: 150px;
     font-size: 30px;
 }
+.product-details p {
+    text-align:left;
+}
