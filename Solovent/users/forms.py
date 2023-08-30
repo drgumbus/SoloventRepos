@@ -1,5 +1,5 @@
 import uuid
-from datetime import  timedelta
+from datetime import timedelta
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm
 from django import forms
@@ -57,9 +57,11 @@ class UserLoginForm(AuthenticationForm, forms.ModelForm):
 
 class UserProfileForm(UserChangeForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Enter you name'}))
+        'placeholder': 'Enter you name',
+        'class': 'profile-border-input'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Enter you surname'}))
+        'placeholder': 'Enter you surname',
+        'class': 'profile-border-input'}))
     image = forms.ImageField(widget=forms.FileInput(attrs={
         'placeholder': 'Choose avatar',
         'class': 'custom-file-input'
@@ -69,7 +71,8 @@ class UserProfileForm(UserChangeForm):
     email = forms.CharField(widget=forms.EmailInput(attrs={
         'readonly': True}))
     phone_number = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Enter you mobile'}))
+        'placeholder': 'Enter you mobile',
+        'class': 'profile-border-input'}))
 
     class Meta:
         model = User
