@@ -33,12 +33,15 @@
                     <div class="container">
                         <div class="left-block">
                              <a href="{% url 'home' %}" class="navbar-brand">Solovent</a>
-                        <div class="search-box">
-                            <input type="text" class="search-txt" placeholder="Search...">
-                            <a href="#" class="search-btn">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                            <form action="{% url 'store:catalog' %}" method="get" class="type-form-search">
+                                <div class="search-box">
+                                    <input type="text" name="search" class="search-txt" placeholder="Search...">
+                                    <button class="search-btn" type="submit">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </form>
+
                         </div>
 
 

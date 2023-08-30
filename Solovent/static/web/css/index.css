@@ -29,6 +29,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    border: none;
     background-color: #ddd;
     text-decoration: none;
     transition: .4s;
@@ -62,9 +63,12 @@ body {
     display:flex;
     align-items: center;
 }
+.type-form-search{
+    margin:0;
+}
 
 .btn-color-custom-layout {
-    padding: 5px 5px 5px 5px;
+    padding: 5px 7px 5px 7px;
     font-size: 18px;
     color: #fff;
     background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
@@ -265,7 +269,7 @@ footer #rights {
 }
 .btn-my-custom {
 
-    padding: 5px;
+    padding: 5px 7px 5px 7px;
     font-size: 18px;
     color: #fff;
     background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);

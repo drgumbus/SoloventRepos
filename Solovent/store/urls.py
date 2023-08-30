@@ -1,5 +1,5 @@
 from django.urls import path, include
-from store.views import CatalogListView, basket_add, basket_remove
+from store.views import CatalogListView, basket_add, basket_remove, Search
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -11,7 +11,7 @@ urlpatterns = [
     # sorted catalog
     path('catalog/category/<int:category_id>/', CatalogListView.as_view(), name='category'),
     # search in catalog
-    path('catalog/search/', CatalogListView.as_view(), name='catalog_search'),
+    # path('search/', CatalogListView.as_view(), name='search'),
     # add to basket
     path('baskets/add/<int:product_id>/', basket_add, name='basket_add'),
     # removal from basket
