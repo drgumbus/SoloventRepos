@@ -47,21 +47,25 @@
 
                         <div class="navbar-wrap">
                             <ul class="navbar-menu">
-                                <li>
-                                    <img src="{% static 'web/img/ico-home.png' %}"
-                                         class="for-large-screens"
+                                <li class="for-small-screens">
+                                    <a href="{% url 'home' %}">
+                                        <img src="{% static 'web/img/ico-home.png' %}"
                                          alt="home"
                                          height="25px" width="25px">
-                                </li>
-                                <li><a href="{% url 'home' %}">Home</a></li>
+                                    </a>
 
-                                  <li>
-                                    <img src="{% static 'web/img/ico-bag.png' %}"
-                                         class="for-large-screens"
-                                         alt="home"
-                                         height="25px" width="25px">
+
+                                <li class="for-full-screens"><a href="{% url 'home' %}">Home</a>
+
+                                <li class="for-small-screens">
+                                    <a href="{% url 'store:catalog' %}">
+                                        <img src="{% static 'web/img/ico-bag.png' %}"
+                                        alt="home"
+                                        height="25px" width="25px">
+                                    </a>
                                 </li>
-                                <li><a href="{% url 'store:catalog' %}">Store</a></li>
+
+                                <li class="for-full-screens"><a href="{% url 'store:catalog' %}">Store</a></li>
                                 <li><a href="{% url 'contacts' %}">Contacts</a></li>
                             </ul>
                             {% if user.is_authenticated %}

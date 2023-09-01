@@ -45,7 +45,7 @@
                             <div class="product-card">
                                 <div class="product-thumb">
 
-                                    <a href="#">
+                                    <a href="{% url 'store:detail' product.id %}">
                                         <img class="card-img-top"
                                         src="{% if product.image %}
                                         {{ product.image.url }}

@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category, Basket
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from common.views import TitleMixin
 from django.db.models import Q
 
@@ -32,6 +33,13 @@ class CatalogListView(TitleMixin, ListView):
         context['cat_products'] = Category.objects.all()
         context['search'] = self.request.GET.get('search')
         return context
+
+
+# Details product view
+class CatalogDetailView(TitleMixin, DetailView):
+    model = Product
+    template_name = 'store/catalog_detail.html'
+    title = 'Solovent - Detail'
 
 
 # Add from basket

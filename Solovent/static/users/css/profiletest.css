@@ -14,7 +14,6 @@ label {
     justify-content: center;
 }
 
-
 input {
 	height: 45px;
 	width: 100%;
@@ -41,13 +40,17 @@ object-fit: cover;
 	justify-content: center;
 	align-items: center;
 }
+.row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 
+}
 .profile-form-container {
-    margin-right: 70px;
     margin-top: 70px;
+    margin-bottom: 70px;
 	opacity: 0;
-	width: 100%;
-	max-width: 510px;
+	max-width: 640px;
 	min-width:300px;
 	background:#fff;
 	box-shadow: 0px 5px 20px rgba(217,229,255);
@@ -55,7 +58,7 @@ object-fit: cover;
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-top: 20px;
-	padding-bottom: 20px;
+
 	animation-name: fadeForm;
 	animation-duration: .7s;
 	animation-timing-function: ease-in-out;

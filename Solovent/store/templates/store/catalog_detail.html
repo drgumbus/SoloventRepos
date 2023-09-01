@@ -1,0 +1,88 @@
+{% extends 'web/layout.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static '/store/css/product_details.css' %}">
+{% endblock %}
+
+<!-- Блок заголовка страницы -->
+{% block title %} {{ title }} {% endblock %}
+
+<!-- Блок основного контента -->
+{% block content %}
+<div class="content-page">
+    <div class="container">
+
+
+    <div class="product-card">
+        <div class="container">
+            <div class="header-product">
+                <h4>
+                    {{ product.name}}
+                </h4>
+                <h6>
+                    <a href="#">{{ product.category }}</a>
+                </h6>
+                <h6>
+                    <a href="#">vendor name</a>
+                </h6>
+                <h6>
+                    Rating
+                </h6>
+            </div>
+        </div>
+
+
+
+
+            <div class="container product-thumb">
+                <a href="#">
+                    <img class="card-img-top"
+                         src="{% if product.image %}
+                        {{ product.image.url }}
+                        {% else %}
+                        {% static 'store/img/default product.png' %}
+                        {% endif %}" alt="Card image cap">
+                </a>
+            </div>
+
+
+
+        <div class="row">
+            <div class="col product-card clr">
+                <div class="form-field">
+                    <p>Number of guests</p>
+                </div>
+                <div class="time-block">
+                    <div class="form-field">
+                        <p>Date</p>
+                    </div>
+                    <div class="form-field">
+                        <p>Time</p>
+                    </div>
+                </div>
+
+                <p>{{product.price}}</p>
+                <div class="product-bottom-details">
+                    <div class="product-links">
+                        <a class="btn-color-custom" href="{% url 'store:basket_add' product.id %}">Add to card</a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col product-card clr">
+                <p>Comments</p>
+                <div>
+                    <p>Text comment</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+
+
+
+
+{% endblock%}
