@@ -18,14 +18,16 @@
         <div class="container">
             <div class="header-product">
                 <h4>
-                    {{ product.name}}
+                    {{ product.name }}
+
+                    print(todat)
                 </h4>
-                <h6>
-                    <a href="#">{{ product.category }}</a>
-                </h6>
-                <h6>
+                <h5>
+                    <a href="{% url 'store:category' product.category.id %}"> {{ product.category }}</a>
+                </h5>
+                <h5>
                     <a href="#">vendor name</a>
-                </h6>
+                </h5>
                 <h6>
                     Rating
                 </h6>

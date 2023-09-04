@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from users.models import User
 # Create your models here.
-
+from django.utils import timezone
 
 class Category(models.Model):
     """Categories to which the goods belong"""
@@ -25,6 +25,10 @@ class Product(models.Model):
                                  verbose_name='Select a category')
     name = models.CharField(max_length=250, db_index=True, verbose_name='Name')
     slug = models.SlugField(max_length=250, db_index=True)
+
+    # from_time_work = models.DateTimeField(default=timezone.now)
+    # to_time_work = models.DateTimeField(default=timezone.now)
+
     image = models.ImageField(upload_to='product_image/%Y/%m/%d', blank=True, verbose_name='Photo')
     description = models.TextField(blank=True, verbose_name='Description')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price')

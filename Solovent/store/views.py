@@ -6,6 +6,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from common.views import TitleMixin
 from django.db.models import Q
+from datetime import date
 
 
 # Catalog products
@@ -13,6 +14,7 @@ class CatalogListView(TitleMixin, ListView):
     model = Product
     template_name = 'store/catalog.html'
     title = 'Solovent - Store'
+    print(date.today())
 
     def get_queryset(self):
         queryset = super(CatalogListView, self).get_queryset()

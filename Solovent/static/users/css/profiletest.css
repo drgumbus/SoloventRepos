@@ -29,9 +29,10 @@ input {
 object-fit: cover;
 }
 
-.profile-border-input:hover{
+.profile-border-input:hover {
     outline: none;
-    border: 2px solid #4A00E0;}
+    border: 2px solid #4A00E0;
+}
 
 .main-content {
 	background-color: #fff;
@@ -99,7 +100,6 @@ object-fit: cover;
 .custom-file-input{
     padding:0;
     color: red;
-    content: "afas";
 }
 .mt-5 {
     margin-top: 0rem!important;

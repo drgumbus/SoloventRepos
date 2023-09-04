@@ -4,6 +4,7 @@ from django.views.generic.base import TemplateView
 
 from common.views import TitleMixin
 
+
 # Home page
 class IndexView(TitleMixin, TemplateView):
     template_name = 'web/index.html'

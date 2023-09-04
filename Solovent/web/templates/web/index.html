@@ -6,6 +6,9 @@
 {% load static %}
 
 <!-- Блок заголовка страницы -->
+{% block css %}
+    <link rel="stylesheet" href="{% static 'datepicker/css/datepicker.min.css' %}">
+{% endblock %}
 
 {% block title %}{{ title }}{% endblock %}
 
@@ -20,9 +23,40 @@
         <p>Here you can fully assemble your event,<br> choose food, music, design and much more!<br>
         We are always happy to help you with the choice, so we constantly update and moderate the products presented on our platform.
         </p>
-        <div class="div-custom">
-             <a class="btn-my-custom" href="{% url 'store:catalog' %}">Start your event</a>
-        </div>
+
+<!--            <form action="{% url 'store:catalog' %}" method="get">-->
+<!--                 <div class="div-custom">-->
+<!--                      <input type="datetime-local" name="weekend" value="2023-01-01"-->
+<!--                             class="calendar" required="" id="id_weekend">-->
+<!--                      <button class="btn-my-custom" type="submit">Start your event</button>-->
+<!--                 </div>-->
+<!--            </form>-->
+        <form action="{% url 'store:catalog' %}" method="get">
+            <div class="div-custom">
+                <input type="text" name="weekend" class="calendar" id="datepicker">
+                 <button class="btn-my-custom" type="submit">Start your event</button>
+            </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                <script src="{% static 'datepicker/js/datepicker.min.js' %}"></script>
+
+                <script src="{% static 'datepicker/js/i18n/datepicker.en.js' %}"></script>
+                <script>
+                    $(function(){
+                        $('#datepicker').datepicker({
+                            language: 'en',
+                            minDate: new Date(),
+                            maxDate: new Date(Date.now() + ( 3600 * 1000 * 730)),
+                            autoClose: false,
+                            timepicker: true,
+                            minutesStep: 10,
+                            buttons: ['today', 'clear'],
+                        });
+
+                    });
+                </script>
+        </form>
+
+
 
     </div>
 </div>

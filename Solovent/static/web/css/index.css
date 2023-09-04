@@ -234,7 +234,7 @@ footer {
 footer #social {
 	display: flex;
 	flex-basis: 50%;
-	padding-left: 35px;
+	padding-left: 75px;
 
 }
 
@@ -274,9 +274,38 @@ footer #rights {
 }
 
 .div-custom{
-    display:flex;
-    justify-content: center;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+
 }
+
+.calendar {
+    text-align: center;
+    opacity: 0.7;
+    border-radius: 10px;
+    border: none;
+    width: 20%;
+    margin-bottom:15px;
+    height: 30px;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+}
+
+.calendar:hover{
+    opacity: 1;
+    outline: none;
+    border: none;
+
+}
+
+.calendar:focus-visible{
+    opacity: 1;
+    border: none;
+    outline: none;
+}
+
 .btn-my-custom {
     padding: 5px 7px 5px 7px;
     font-size: 18px;
@@ -284,12 +313,14 @@ footer #rights {
     background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
     text-decoration: none;
     border-radius: 10px;
+    border: none;
     background-size:200%;
     transition: all .5s ease-in-out;
 }
 
 .btn-my-custom:hover{
-    color: #fff;
+    border: none;
+    outline: none;
     background-position: right;
 }
 
@@ -301,13 +332,13 @@ footer #rights {
 	transform: scale(1.1);
 }
 
-@media(max-width:770px) {
+@media(min-width:770px) {
     .for-small-screens {
         display: none;
     }
 }
 
-@media(min-width:771px) {
+@media(max-width:771px) {
   .for-full-screens {
         display: none;
   }
