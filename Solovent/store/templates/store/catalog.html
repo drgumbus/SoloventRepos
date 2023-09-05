@@ -57,15 +57,15 @@
 
                                 <div class="product-details">
                                     <h6 class="product-cat-description">{{ product.category }}</h6>
-                                    <div class="product-price">{{ product.price }}₪</div>
                                     <h4>
                                         <a href="">{{ product.name|truncatewords_html:5 }}</a>
                                     </h4>
-                                    <p>{{ product.description|truncatechars_html:76 }}</p>
+                                    <div class="product-price">Starting from ₪{{ product.price }}</div>
+                                    <p>{{ product.description|truncatechars_html:70 }}</p>
                                     <div class="product-bottom-details">
 
                                         <div class="product-links">
-                                            <a class="btn-color-custom" href="{% url 'store:basket_add' product.id %}">Add to card</a>
+                                            <a class="btn-color-custom" href="{% url 'store:detail' product.id %}">More</a>
                                         </div>
                                     </div>
                                 </div>

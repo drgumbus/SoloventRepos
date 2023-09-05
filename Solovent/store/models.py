@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from users.models import User
 # Create your models here.
-from django.utils import timezone
+from django.utils.timezone import now
 
 class Category(models.Model):
     """Categories to which the goods belong"""
@@ -25,15 +25,16 @@ class Product(models.Model):
                                  verbose_name='Select a category')
     name = models.CharField(max_length=250, db_index=True, verbose_name='Name')
     slug = models.SlugField(max_length=250, db_index=True)
-
-    # from_time_work = models.DateTimeField(default=timezone.now)
-    # to_time_work = models.DateTimeField(default=timezone.now)
-
     image = models.ImageField(upload_to='product_image/%Y/%m/%d', blank=True, verbose_name='Photo')
     description = models.TextField(blank=True, verbose_name='Description')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price')
     available = models.BooleanField(default=True, verbose_name='Availability')
     stock = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Amount')
+
+    # testing
+    number_of_quests = models.PositiveSmallIntegerField(default=1)
+    beginning_of_work_day_time = models.TimeField(default=now)
+    end_of_work_day_time = models.TimeField(default=now)
 
     class Meta:
         ordering = ('name',)
@@ -58,7 +59,6 @@ class Basket(models.Model):
     product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
     quantity = models.PositiveSmallIntegerField(default=0)
     created_timestamp = models.DateTimeField(auto_now_add=True)
-
     objects = BasketQuerySet.as_manager()
 
     def __str__(self):
