@@ -31,8 +31,8 @@
 <!--            </form>-->
         <form action="{% url 'store:catalog' %}" method="get">
             <div class="div-custom">
-                <input type="text" name="weekend" class="calendar" id="datepicker">
-                 <button class="btn-my-custom" type="submit">Start your event</button>
+                <input type="text" name="weekend" class="calendar" id="datepicker" placeholder="You day is.." readonly>
+                <button class="btn-my-custom" type="submit">Start your event</button>
             </div>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
                 <script src="{% static 'datepicker/js/datepicker.min.js' %}"></script>
@@ -46,10 +46,11 @@
                             maxDate: new Date(Date.now() + ( 3600 * 1000 * 730)),
                             autoClose: false,
                             timepicker: true,
+                            dateFormat: 'dd.mm.yyyy',
+                            timeFormat: 'hh:mm',
                             minutesStep: 10,
                             buttons: ['today', 'clear'],
                         });
-
                     });
                 </script>
         </form>
