@@ -1,12 +1,13 @@
 from django.shortcuts import HttpResponseRedirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Product, Category, Basket
+from .models import Product, Category, Basket,WorkDays
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from common.views import TitleMixin
 from django.db.models import Q
-import datetime
+from datetime import datetime
+
 
 # Catalog products
 class CatalogListView(TitleMixin, ListView):
@@ -48,24 +49,38 @@ class CatalogDateSearch(TitleMixin, ListView):
 
     def get_queryset(self):
         queryset = super(CatalogDateSearch, self).get_queryset()
+
         search_time = self.request.GET.get('search_time')
-        print(f'search_time TYPE:{type(search_time)}')
-        print(f'search_time VALUE:{search_time}')
+        search_guests = self.request.GET.get('search_guests')
+        print(f'search_guests:{search_guests}')
+        if len(search_time) == 0:
+            search_time = '01-01-2023 12:00'
+        # print(f'search_time TYPE:{type(search_time)}')
+        # print(f'search_time VALUE:{search_time}')
 
-        search_time_day = int(search_time[:2])
-        search_time_month = int(search_time[3:5])
-        search_time_year = int(search_time[6:10])
-        search_time_hour = int(search_time[11:13])
-        search_time_minute = int(search_time[14:17])
+        search_time_date = datetime.strptime(search_time, '%d-%m-%Y %H:%M')
+        print(
+               f' DATE:{search_time_date.date()}'
+               f' YEAR:{search_time_date.year}'
+               f' DAY:{search_time_date.day}'
+               f' MONTH:{search_time_date.month}')
+        #       f' Day week №:{datetime.isoweekday(search_time_date)}'
+        #       f' HOUR:{search_time_date.time().hour}'
+        #       f' MINUTE:{search_time_date.time().minute}'
+        #       f' TYPE:{ type(search_time_date)}')
+        day_list = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY']
 
-        # print(f'search_time DAY:{search_time_day}')
-        # print(f'search_time MONTH:{search_time_month}')
-        # print(f'search_time YEAR:{search_time_year}')
-        #
-        # print(f'search_time HOUR:{search_time_hour}')
-        # print(f'search_time MINUTE:{search_time_minute}')
+        day_index = search_time_date.isoweekday()
+        print(f'search_time NEW VALUE:{search_time_date} | {day_list[day_index-1]} H:{search_time_date.time().hour} ')
+        # print(f'day:{queryset.filter(Q(work_days=day_index))}')
+        # print(f'beg:{queryset.filter(Q(beginning_of_work_day_time__hour__lte=search_time_date.time().hour))}')
+        # print(f'end:{queryset.filter(Q(end_of_work_day_time__hour__gt=search_time_date.time().hour))}')
+        print(f'Product:{queryset.filter((Q(beginning_of_work_day_time__hour__lte=search_time_date.time().hour)| Q(end_of_work_day_time__hour__gt=search_time_date.time().hour)) & Q(work_days=day_index))}')
 
-        return queryset.filter(beginning_of_work_day_time__hour__lte=search_time_hour)
+        return queryset.filter((Q(beginning_of_work_day_time__hour__lte=search_time_date.time().hour)
+                               | Q(end_of_work_day_time__hour__gt=search_time_date.time().hour))
+                               & Q(work_days=day_index)
+                               & Q(number_of_quests__lte=search_guests))
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CatalogDateSearch, self).get_context_data()

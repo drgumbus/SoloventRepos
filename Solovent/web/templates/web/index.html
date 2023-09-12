@@ -7,7 +7,7 @@
 
 <!-- Блок заголовка страницы -->
 {% block css %}
-    <link rel="stylesheet" href="{% static 'datepicker/css/datepicker.min.css' %}">
+<link rel="stylesheet" href="{% static 'datepicker/css/datepicker.min.css' %}" xmlns="http://www.w3.org/1999/html">
 {% endblock %}
 
 {% block title %}{{ title }}{% endblock %}
@@ -18,20 +18,32 @@
 
 <div class="features">
     <div class="features-block">
-
         <h1>Welcome to Solovent!</h1>
-        <p>Choose your date of event</p>
-
-<!--            <form action="{% url 'store:catalog' %}" method="get">-->
-<!--                 <div class="div-custom">-->
-<!--                      <input type="datetime-local" name="weekend" value="2023-01-01"-->
-<!--                             class="calendar" required="" id="id_weekend">-->
-<!--                      <button class="btn-my-custom" type="submit">Start your event</button>-->
-<!--                 </div>-->
-<!--            </form>-->
         <form action="{% url 'store:search_time' %}" method="get">
             <div class="div-custom">
-                <input type="text" name="search_time" class="calendar" id="datepicker" placeholder="You day is.." readonly>
+                <div class="number-guests-field">
+                    <div class="calendar-field">
+                         <img src="{% static 'web/img/calendar.png' %}"
+                                         alt="home" class="img-calendar"
+                                         height="20px" width="20px">
+                        <input type="text" name="search_time" class="calendar-field-text" id="datepicker"
+                       placeholder="Your date of event" readonly>
+                    </div>
+
+
+                    <div class="cont-numb">
+                        <img src="{% static 'web/img/guests.png' %}"
+                                         alt="home" class="img-guests"
+                                         height="20px" width="20px">
+                        <button id="decrement" class="btn-guests" onclick="stepper(this)" type="button">−</button>
+                        <input type="number" step="1" min="1" max="999" value="10" id="number-guests"
+                                name="search_guests" class="input-guests" readonly>
+                        <button id="increment" class="btn-guests" onclick="stepper(this)" type="button">+</button>
+                        <script src="{% static 'web/js/incremental.js' %}"></script>
+                    </div>
+
+                </div>
+
                 <button class="btn-my-custom" type="submit">Start your event</button>
             </div>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -39,13 +51,17 @@
 
                 <script src="{% static 'datepicker/js/i18n/datepicker.en.js' %}"></script>
                 <script>
+
+
                     $(function(){
                         $('#datepicker').datepicker({
-<!--                            language: 'en',-->
+                            defaultDate: new Date(),
+                            language: 'en',
                             minDate: new Date(),
                             maxDate: new Date(Date.now() + ( 3600 * 1000 * 730)),
                             autoClose: false,
-                            dateFormat: 'mm-dd-yyyy',
+                            dateFormat: 'dd-mm-yyyy',
+                            timeFormat: 'hh:ii',
                             timepicker: true,
                             minutesStep: 10,
                             buttons: ['today', 'clear'],

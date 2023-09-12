@@ -30,23 +30,36 @@
                     Rating
                 </h6>
             </div>
+            <div class="main-details">
+                <div class="container product-thumb">
+                    <a href="#">
+                        <img class="card-img-top"
+                             src="{% if product.image %}
+                            {{ product.image.url }}
+                            {% else %}
+                            {% static 'store/img/default product.png' %}
+                            {% endif %}" alt="Card image cap">
+                    </a>
+                </div>
+
+                <div class="container description-product">
+                    {{product.description}}
+                    <div class="calendar-work">
+                        {% for days in product.work_days.all %}
+                            <h6>{{days.work_day|slice:":3"}}</h6>
+                        {% endfor %}
+
+                        <h6>{{product.beginning_of_work_day_time}} to {{product.end_of_work_day_time}}</h6>
+                    </div>
+
+                    <p>Minimum number of guests: {{product.number_of_quests}}</p>
+                </div>
+            </div>
+
         </div>
 
 
 
-
-            <div class="container product-thumb">
-                <a href="#">
-                    <img class="card-img-top"
-                         src="{% if product.image %}
-                        {{ product.image.url }}
-                        {% else %}
-                        {% static 'store/img/default product.png' %}
-                        {% endif %}" alt="Card image cap">
-                </a>
-            </div>
-        <p>Working of time for {{product.beginning_of_work_day_time}} to {{product.end_of_work_day_time}}</p>
-        <p>Minimum number of guests: {{product.number_of_quests}}</p>
 
         <div class="row">
             <div class="col product-card clr">

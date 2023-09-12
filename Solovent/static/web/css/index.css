@@ -269,7 +269,6 @@ footer #rights {
 }
 
 .features-block button {
-	margin: 0 auto;
 	display: block;
 }
 
@@ -281,7 +280,56 @@ footer #rights {
 
 }
 
-.calendar {
+.img-calendar{
+    margin-left: 10px;
+    margin-right:-20px;
+}
+
+.calendar-field-text{
+    padding:0;
+    margin-right:-10px;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+.calendar-field-text:hover{
+    outline: none;
+    border: none;
+}
+
+.calendar-field-text:focus-visible{
+    border: none;
+    outline: none;
+}
+
+.calendar-field {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    text-align: center;
+    background-color: #fff;
+    opacity: 0.7;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    transition: all .3s ease-in-out;
+}
+
+.calendar-field:hover{
+    opacity: 1;
+    outline: none;
+    border: none;
+}
+
+.calendar-field:focus-visible{
+    opacity: 1;
+    border: none;
+    outline: none;
+}
+
+.guests-field{
     text-align: center;
     opacity: 0.7;
     border-radius: 10px;
@@ -290,20 +338,99 @@ footer #rights {
     margin-bottom:15px;
     height: 30px;
     font-size: 20px;
+
+}
+.guests-field:hover{
+    opacity: 1;
+    outline: none;
+    border: none;
+}
+
+.guests-field:focus-visible{
+    opacity: 1;
+    border: none;
+    outline: none;
+}
+.number-guests-field{
+    margin-bottom: 10px;
+    display:flex;
+    height: 30px;
+    width: auto;
+    justify-content: center;
+    border-radius:45px;
+    font-size: 16px;
     transition: all .3s ease-in-out;
 }
 
-.calendar:hover{
+.number-guests-field:hover{
     opacity: 1;
     outline: none;
     border: none;
-
 }
 
-.calendar:focus-visible{
+.cont-numb{
+    display:flex;
+    align-items: center;
+    opacity: 0.7;
+    padding-left:10px;
+    padding-right:10px;
+    transition: all .3s ease-in-out;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.cont-numb:hover{
+    opacity:1;
+}
+input[type="text"]{
+    padding:0;
+}
+input[type="number"]:focus-visible{
     opacity: 1;
-    border: none;
     outline: none;
+    border: none;
+}
+
+.input-guests{
+    background-color: transparent;
+    margin:0;
+    padding:0;
+    font-size: 14px;
+}
+
+.img-guests{
+    margin-right: 10px;
+    background-color: transparent;
+}
+
+.btn-guests{
+    padding:0;
+    margin: 0;
+    border: none;
+    color:#8e2de2;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #fff;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+    text-align: center;
+    border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin:0;
+}
+#decrement{
+    background-color: transparent;
+}
+
+#increment{
+    background-color: transparent;
+    padding-right: 10px;
+    border-radius: 0 10px 10px 0;
 }
 
 .btn-my-custom {

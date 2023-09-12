@@ -55,13 +55,19 @@
     background-position: right;
     color:#fff;
 }
+
 .cl-custom{
     padding-top:10px;
 }
 
 .product-thumb{
- padding-left: 42px;
- padding-right: 42px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.description-product{
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .product-thumb a{
@@ -78,6 +84,16 @@
     object-fit:cover;
 }
 
+.calendar-work{
+    margin-top:20px;
+    display:flex;
+
+}
+.calendar-work h6{
+    font-size: 14px;
+    font-weight: 200;
+    padding-right: 15px;
+}
 .product-details {
     padding: 10px;
 }
