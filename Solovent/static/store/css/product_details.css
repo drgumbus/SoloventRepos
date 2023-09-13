@@ -5,12 +5,16 @@
     margin-top: 25;
     background: #f9f9f9;
 }
+.row{
+    padding-left:10px;
+    padding-right:10px;
+}
 .header-product{
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    padding: 30px 30px 30px;
-
+    padding-left:10px;
+    padding-top: 20px;
 }
 
 .header-product h5 {
@@ -61,46 +65,76 @@
 }
 
 .product-thumb{
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-top:15px;
 }
 
 .description-product{
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-top:15px;
+}
+
+.description-product p {
+    text-align: justify;
+    padding:0 5 0 5;
+    margin: 0;
+}
+
+.description-product h6 {
+    font-size:18px;
+    padding: 5 5 0 5;
+    color: #fff;
+    border-radius: 5px;
+    background: linear-gradient(to left, #8E2DE2, #4A00E0, #8E2DE2);
+
 }
 
 .product-thumb a{
     display:flex;
-    align-item: center;
-    justify-content:center;
     height: 500px;
 }
 
 .product-thumb img {
-    max-height: 100%;
-    max-width: 100%;
     border-radius: 20px;
     object-fit:cover;
 }
 
+.main-details{
+    display: flex;
+}
+
 .calendar-work{
-    margin-top:20px;
     display:flex;
+    color:#000;
+    font-size: 14px;
+    flex-direction: column;
 
 }
-.calendar-work h6{
-    font-size: 14px;
-    font-weight: 200;
-    padding-right: 15px;
+.add-to-card{
+    display:flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
 }
+
+.price-text{
+    font-size: 20px;
+}
+
+.calendar-work-days{
+    display:flex;
+    justify-content: space-between;
+}
+
+.calendar-work-time{
+    display:flex;
+    justify-content: space-between;
+
+}
+
 .product-details {
     padding: 10px;
 }
 .clr {
-    background: #27c5b8;
-}
 
+}
 .product-details h4 a {
     padding-bottom: 5px;
     font-weight: 500;

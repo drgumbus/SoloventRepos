@@ -1,4 +1,4 @@
-{% extends 'web/layout.html' %}
+{% extends 'web/layout.html' %}de
 {% load static %}
 
 {% block css %}
@@ -12,86 +12,99 @@
 {% block content %}
 <div class="content-page">
     <div class="container">
-
-
-    <div class="product-card">
-        <div class="container">
-            <div class="header-product">
-                <h4>
-                    {{ product.name }}
-                </h4>
-                <h5>
-                    <a href="{% url 'store:category' product.category.id %}"> {{ product.category }}</a>
-                </h5>
-                <h5>
-                    <a href="#">vendor name</a>
-                </h5>
-                <h6>
-                    Rating
-                </h6>
-            </div>
-            <div class="main-details">
-                <div class="container product-thumb">
-                    <a href="#">
-                        <img class="card-img-top"
-                             src="{% if product.image %}
-                            {{ product.image.url }}
-                            {% else %}
-                            {% static 'store/img/default product.png' %}
-                            {% endif %}" alt="Card image cap">
-                    </a>
+        <div class="product-card">
+            <div class="container">
+                <div class="header-product">
+                    <h4>
+                        {{ product.name }}
+                    </h4>
+                    <h5>
+                        <a href="{% url 'store:category' product.category.id %}"> {{ product.category }}</a>
+                    </h5>
+                    <h5>
+                        <a href="#">vendor name</a>
+                    </h5>
+                    <h6>
+                        Rating
+                    </h6>
                 </div>
 
-                <div class="container description-product">
-                    {{product.description}}
-                    <div class="calendar-work">
-                        {% for days in product.work_days.all %}
-                            <h6>{{days.work_day|slice:":3"}}</h6>
-                        {% endfor %}
+                <div class="row">
 
-                        <h6>{{product.beginning_of_work_day_time}} to {{product.end_of_work_day_time}}</h6>
+                    <div class="col-lg-8 product-thumb">
+                        <a href="#">
+                            <img class="card-img-top"
+                                 src="{% if product.image %}
+                                {{ product.image.url }}
+                                {% else %}
+                                {% static 'store/img/default product.png' %}
+                                {% endif %}" alt="Card image cap">
+                        </a>
                     </div>
 
-                    <p>Minimum number of guests: {{product.number_of_quests}}</p>
+                    <div class="col-lg-4 description-product">
+                        <div class="add-to-card">
+                            <input min="{{product.number_of_quests}}" value="{{product.number_of_quests}}"type="number">
+                            <p class="price-text">₪{{product.price}}</p>
+                            <a class="btn-color-custom" href="{% url 'store:basket_add' product.id %}">Add to card</a>
+                        </div>
+
+
+                        <h6>Product description:</h6>
+                        <p>{{product.description}}</p>
+                        <h6>We are working:</h6>
+
+                        <div class="calendar-work">
+                            <div class="calendar-work-days">
+                                {% for days in product.work_days.all %}
+                                    <p>{{days.work_day|slice:":3"}}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="calendar-work-time">
+                                <p>From {{product.beginning_of_work_day_time}} to {{product.end_of_work_day_time}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
+<!--            <div class="container">-->
+
+<!--                <div class="row">-->
+
+<!--                    <div class="col-lg-6 product-card clr">-->
+<!--                        <div class="form-field">-->
+<!--                            <p>Number of guests:</p>-->
+<!--                        </div>-->
+<!--                        <div class="time-block">-->
+<!--                            <div class="form-field">-->
+<!--                                <p>Date:</p>-->
+<!--                            </div>-->
+<!--                            <div class="form-field">-->
+<!--                                <p>Reservation time:</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <p>{{product.price}}</p>-->
+<!--                        <div class="product-bottom-details">-->
+<!--                            <div class="product-links">-->
+<!--                                <a class="btn-color-custom" href="{% url 'store:basket_add' product.id %}">Add to card</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                     <div class="col-lg-6 product-card clr">-->
+<!--                        <p>Comments</p>-->
+<!--                        <div>-->
+<!--                            <p>Text comment</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
         </div>
-
-
-
-
-        <div class="row">
-            <div class="col product-card clr">
-                <div class="form-field">
-                    <p>Number of guests:</p>
-                </div>
-                <div class="time-block">
-                    <div class="form-field">
-                        <p>Date:</p>
-                    </div>
-                    <div class="form-field">
-                        <p>Reservation time:</p>
-                    </div>
-                </div>
-
-                <p>{{product.price}}</p>
-                <div class="product-bottom-details">
-                    <div class="product-links">
-                        <a class="btn-color-custom" href="{% url 'store:basket_add' product.id %}">Add to card</a>
-                    </div>
-                </div>
-            </div>
-
-             <div class="col product-card clr">
-                <p>Comments</p>
-                <div>
-                    <p>Text comment</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
     </div>
 </div>
 
